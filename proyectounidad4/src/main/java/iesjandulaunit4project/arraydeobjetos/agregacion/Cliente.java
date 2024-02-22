@@ -46,7 +46,12 @@ public class Cliente implements Comparable <Cliente>{
 			return true;
 		if (cl == null)
 			return false;
-		return Objects.equals(apellidos, cl.apellidos) && Objects.equals(dni, cl.dni) && Objects.equals(nombre, cl.nombre);
+		return Objects.equals(dni,cl);
+	}
+	
+	@Override 
+	public int hashCode () {
+		return Objects.hash(dni);
 	}
 
 	@Override

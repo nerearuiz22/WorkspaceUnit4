@@ -37,9 +37,9 @@ public class ArrayLiterales {
 	public static void pintarArrayCadenas (String[] array) {
 		for (int i=0; i<array.length; i++) {
 			if (i==array.length-1) 
-				System.out.format("|%-20s|", array[i] );
+				System.out.format("%-20s|", array[i] );
 			else 
-				System.out.format("|%-20s", array[i] );
+				System.out.format("%-20s", array[i] );
 		}
 		System.out.println();
 	}

@@ -25,7 +25,12 @@ class TiendaTest {
 		
 		Cliente[] array=nockTienda.getClientes();
 		
-		assertTrue(buscarElenArrays(array,nockClient));
+		Arrays.sort(array);
+		//Arrays.parallelSort(array, (cl1,cl2) -> cl1.getNombre().compareTo(cl2.getNombre()));
+		
+		assertTrue(Arrays.binarySearch(array, nockClient)>=0);
+		//assertTrue(buscarElenArrays(array,nockClient));
+		
 	}
 	
 	@Test
@@ -40,7 +45,24 @@ class TiendaTest {
 		
 	}
 	
-	private boolean buscarElenArrays(Cliente] clientes, Cliente cliente ) {
+	@Test
+	void hayClientesTest() {
+		assertFalse(nockTienda.hayClientes());
+		nockTienda.addCliente(nockClient);
+		assertTrue(nockTienda.hayClientes());
+	}
+	
+	@Test
+	void hayClientesIntegracionTest() {
+		assertFalse(nockTienda.hayClientes());
+		nockTienda.addCliente(nockClient);
+		assertTrue(nockTienda.hayClientes());
+		nockTienda.borrarCliente(nockClient);
+		assertFalse(nockTienda.hayClientes());
+		
+	}
+	
+	/*private boolean buscarElenArrays(Cliente[] clientes, Cliente cliente ) {
 		boolean encontrado=false;
 		
 		for (int i; i<cliente.length && !encontrado; i++) {
@@ -51,5 +73,6 @@ class TiendaTest {
 		
 		return encontrado;
 	}
+	*/
 
 }
