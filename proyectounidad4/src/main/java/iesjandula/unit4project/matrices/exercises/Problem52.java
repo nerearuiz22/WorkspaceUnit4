@@ -7,14 +7,26 @@ public class Problem52 {
 		
 
 	}
-	int [][] A = {{1,2} {3,4}};
+	int [][] A = {{1,2}, {3,4}};
 	
-	int [][] B = {{1,1} {1,1}};
+	int [][] B = {{1,1}, {1,1}};
 	
 	int [][] suma = new int[2][2];
+	int [][] multiplicacion = new int[2][2];
 	
 	//Hacer la suma con recorrido de filas
 	
-	//Hacer la suma con recorrido de columnas
+	for (int i=0; i<A.length; i++) {
+		for (int j=0; j<A[i].length; j++) {
+			suma[i][j]= A[i][j] + B[i][j];
+		}
+	}
+	
+	//Hacer la multiplicacion con recorrido de columnas
+	for (int i=0; i<A.length; i++) {
+		for (int j=0; j<A[i].length; j++) {
+			multiplicacion[i][j]= A[i][j] + B[i][j];
+		}
+	}
 
 }
