@@ -22,12 +22,10 @@ public class Biblioteca {
 		rellenaLibrosNull();
 		
 	}
-
 	
 
 	public Biblioteca(String nombre, Libro[] libros) {
 		this.nombre = nombre;
-
 		
 	}
 
